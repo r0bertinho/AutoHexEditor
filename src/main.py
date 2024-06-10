@@ -1,4 +1,5 @@
 from FileOperations import *
+import numba
 import logging
 import time
 
@@ -12,6 +13,7 @@ logging.basicConfig(
   ]
 )
 
+@numba.jit(nopython=True, cache=True)
 def main() -> None :
   logging.info('App iniciado')
   

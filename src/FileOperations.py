@@ -1,4 +1,5 @@
 import logging
+import numba
 import sys
 import os
 
@@ -21,6 +22,7 @@ class Operations :
   def __init__(self) :
     pass
   
+  @numba.jit(nopython=True)
   def FindFilePathByIdInDir(id: int, dir: str) -> str :
     if id == None :
       return None
@@ -32,6 +34,7 @@ class Operations :
     
     return None
   
+  @numba.jit(nopython=True)
   def FileBinaryToHexString(filePath: str) -> str :
     if filePath == None :
       return None
@@ -39,5 +42,6 @@ class Operations :
     with open(filePath, 'rb') as file :
       return file.read().hex()
 
+@numba.jit(nopython=True)
 def clearscreen() -> None :
   os.system('cls' if os.name == 'nt' else 'clear')
