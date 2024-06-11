@@ -1,6 +1,7 @@
 from FileOperations import *
-import numba
+import numpy as np
 import logging
+import numba
 import time
 
 logging.basicConfig(
@@ -14,7 +15,7 @@ logging.basicConfig(
 )
 
 @numba.jit(nopython=True, cache=True)
-def main() -> None :
+def main() -> None:
   logging.info('App iniciado')
   
   run: bool = True
@@ -25,5 +26,5 @@ def main() -> None :
   
   logging.info('App fechado')
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
   main()
