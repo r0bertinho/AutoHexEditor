@@ -1,35 +1,12 @@
 import numpy as np
-import logging
 import numba
 import sys
 import os
 
-logging.basicConfig(
-  encoding='UTF-8',
-  level=logging.INFO,
-  format='%(asctime)s [%(levelname)s]; %(name)r: %(message)s',
-  datefmt='%H:%M:%S',
-  handlers=[
-    logging.FileHandler('logfile.log'),
-    logging.StreamHandler(sys.stdout)
-  ]
-)
 
 class Operations :
   def __init__(self) :
     pass
-  
-  @numba.jit(nopython=True)
-  def FindFilePathByIdInDir(self, id: int, dir: str) -> str:
-    if id is None:
-      return None
-
-    file_path = np.string_(dir) + np.string_(str(id)) + np.string_('.bin')
-
-    if numba.types.boolean(np.isfile(file_path)):
-      return file_path
-
-    return None
   
   @numba.jit(nopython=True)
   def FileBinaryToHexString(self, filePath: str) -> str:

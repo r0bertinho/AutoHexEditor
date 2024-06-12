@@ -8,6 +8,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.vscode/
 .Python
 build/
 develop-eggs/
@@ -24,9 +25,8 @@ wheels/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
+*.exe
 *.egg
-src/*.log
-*.log
 MANIFEST
 
 # PyInstaller
