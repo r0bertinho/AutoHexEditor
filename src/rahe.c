@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
   char *comargs = NULL;
 
   for (int i = 1; argv[i] != NULL; i++) {
-    comargs_len += strlen(argv[i]) + 1; // +1 for the space
+    comargs_len += strlen(argv[i]) + 1;
   }
 
   comargs = malloc(comargs_len + 1);
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  comargs[0] = '\0'; // initialize comargs to an empty string
+  comargs[0] = '\0';
 
   for (int i = 1; argv[i] != NULL; i++) {
     strcat(comargs, argv[i]);
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  char command[256]; // assuming the command won't exceed 256 characters
+  char command[256];
   snprintf(command, sizeof(command), "python -u \"./src/main.py\" %s", comargs);
   system(command);
 
