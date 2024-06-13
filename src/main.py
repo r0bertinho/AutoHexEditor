@@ -1,22 +1,18 @@
 from FileOperations import *
 from FileMessages import *
 
+@numba.njit
 def main() -> None:
   input: str = sys.argv[1]
-  inptlist = []
-  
-  for i in len(sys.argv):
-    if i > 1:
-      inptlist.append(sys.argv[i])
   
   if input == "help":
-    Message.Help(inptlist)
+    Message.Help()
     
   elif input == "decode":
-    Message.Decode(inptlist)
+    Message.Decode()
     
   elif input == "encode":
-    Message.Encode(inptlist)
+    Message.Encode()
     
 
 if __name__ == '__main__':
