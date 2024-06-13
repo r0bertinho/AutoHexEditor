@@ -4,22 +4,39 @@ import os
 
 class Message:
   @numba.njit
-  def Help():
+  def Help(inlist):
     print(
 """
 -commands: \"help\", \"encode\", \"decode\", \"follow\"
 usage: rahe <command> [args]
+help specific: rahe help <command>
 
-Examples:
-$ rahe encode "myfile.bin"
-$ rahe follow "mycfg.init"
+"""
+)
+    if inlist[1] == "encode":
+      print(
+"""
+
+"""
+)
+    elif inlist[1] == "decode":
+      print(
+"""
+
+"""
+)
+    elif inlist[1] == "help":
+      print(
+"""
+Seriously? You need help with help?
+
 """
 )
   
   @numba.njit
-  def Encode():
+  def Encode(inlist):
     pass
   
   @numba.njit
-  def Decode():
+  def Decode(inlist):
     pass

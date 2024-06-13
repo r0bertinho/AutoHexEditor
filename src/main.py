@@ -3,15 +3,20 @@ from FileMessages import *
 
 def main() -> None:
   input: str = sys.argv[1]
+  inptlist = []
+  
+  for i in len(sys.argv):
+    if i > 1:
+      inptlist.append(sys.argv[i])
   
   if input == "help":
-    Message.Help()
+    Message.Help(inptlist)
     
   elif input == "decode":
-    Message.Decode(sys.argv[2])
+    Message.Decode(inptlist)
     
   elif input == "encode":
-    Message.Encode(sys.argv[2])
+    Message.Encode(inptlist)
     
 
 if __name__ == '__main__':
